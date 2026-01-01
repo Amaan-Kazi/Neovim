@@ -222,8 +222,39 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
         --
+
+        -- web
+        html = {},
+        cssls = {},
+        ts_ls = {},
+        jsonls = {},
+
+        emmet_ls = {
+          filetypes = {
+            'html',
+
+            'css',
+            'sass',
+            'scss',
+
+            'javascript',
+
+            'javascriptreact',
+            'typescriptreact',
+
+            'svelte',
+            'vue',
+          },
+          init_options = {
+            html = {
+              options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ['bem.enabled'] = true,
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
