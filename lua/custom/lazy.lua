@@ -58,6 +58,9 @@ return function()
     -- Fast and efficient parser for syntax highlighting that only analyzes parts of documents that have changed
     require 'custom.plugins.treesitter',
 
+    -- Live preview for Markdown, HTML (with CSS and JS), AsciiDoc and SVG in your browser with instant updates while typing
+    require 'custom.plugins.live-preview',
+
     --  Here are some example plugins that I've included in the Kickstart repository.
     --  Uncomment any of the lines below to enable them (you will need to restart nvim).
     --
