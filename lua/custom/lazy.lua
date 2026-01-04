@@ -61,6 +61,9 @@ return function()
     -- Live preview for Markdown, HTML (with CSS and JS), AsciiDoc and SVG in your browser with instant updates while typing
     require 'custom.plugins.live-preview',
 
+    -- Syntax highlighting for chezmoi (dotfile manager)
+    require 'custom.plugins.chezmoi',
+
     --  Here are some example plugins that I've included in the Kickstart repository.
     --  Uncomment any of the lines below to enable them (you will need to restart nvim).
     --
