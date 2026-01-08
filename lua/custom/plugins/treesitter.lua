@@ -36,7 +36,15 @@ return { -- Highlight, edit, and navigate code
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
       additional_vim_regex_highlighting = { 'ruby' },
     },
-    indent = { enable = true, disable = { 'ruby' } },
+    indent = {
+      enable = true,
+      disable = {
+        'ruby',
+
+        -- keeping it enabled seems to be with neovim and other plugins performing html indentation
+        'html',
+      },
+    },
   },
   -- There are additional nvim-treesitter modules that you can use to interact
   -- with nvim-treesitter. You should go explore a few and see what interests you:

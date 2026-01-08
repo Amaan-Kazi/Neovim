@@ -73,6 +73,9 @@ return function()
     require 'kickstart.plugins.autopairs',
     require 'kickstart.plugins.neo-tree',
 
+    -- Use treesitter to autoclose and autorename HTML tags, also works with a few other languages and frameworks
+    require 'custom.plugins.ts-autotag',
+
     -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
     -- Or use telescope!
     -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
