@@ -67,11 +67,11 @@ return function()
     --  Here are some example plugins that I've included in the Kickstart repository.
     --  Uncomment any of the lines below to enable them (you will need to restart nvim).
     --
-    -- require 'kickstart.plugins.debug',
-    require 'kickstart.plugins.indent_line',
-    -- require 'kickstart.plugins.lint',
-    require 'kickstart.plugins.autopairs',
-    require 'kickstart.plugins.neo-tree',
+    -- require 'custom.plugins.debug',
+    require 'custom.plugins.indent_line',
+    -- require 'custom.plugins.lint',
+    require 'custom.plugins.autopairs',
+    require 'custom.plugins.neo-tree',
 
     -- Use treesitter to autoclose and autorename HTML tags, also works with a few other languages and frameworks
     require 'custom.plugins.ts-autotag',
