@@ -26,6 +26,9 @@ return function()
   --
   -- NOTE: Here is where you install your plugins.
   require('lazy').setup({
+    -- If you want to see what themes are installed, you can use `:Themery`.
+    require 'custom.themes',
+
     -- Detect tabstop and shift width automatically
     require 'custom.plugins.guess-indent',
 
@@ -45,9 +48,6 @@ return function()
     require 'custom.plugins.conform',
     -- Autocompletion
     require 'custom.plugins.blink',
-
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    require 'custom.themes.tokyonight',
 
     -- Highlight todo, notes, etc in comments
     require 'custom.plugins.todo-comments',
