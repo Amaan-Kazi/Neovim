@@ -1,6 +1,7 @@
 # My Neovim Config
 This repo has used [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as a starting point for the config
 
+
 ## Plugins
 
 ### [Themery](https://github.com/zaldih/themery.nvim)
@@ -17,4 +18,16 @@ Syntax highlighting for chezmoi ([dotfiles](https://github.com/Amaan-Kazi/Dotfil
 
 ### [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 Use treesitter to autoclose and autorename HTML tags, also works with a few other languages and frameworks
+
+
+## Themes
+- [Vscode](https://github.com/Mofiqul/vscode.nvim)
+- [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
+- [Nightfox](https://github.com/EdenEast/nightfox.nvim)
+- [Tokyonight](https://github.com/folke/tokyonight.nvim)
+- [Github](https://github.com/projekt0n/github-nvim-theme)
+- [Onedark](https://github.com/navarasu/onedark.nvim)
+- [Ayu](https://github.com/Shatur/neovim-ayu)
+- [Arctic](https://github.com/rockyzhang24/arctic.nvim)
+
 

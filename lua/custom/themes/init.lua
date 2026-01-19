@@ -1,24 +1,47 @@
 local theme_configs = {
+  require 'custom.themes.vscode',
+  require 'custom.themes.kanagawa',
+  require 'custom.themes.nightfox',
   require 'custom.themes.tokyonight',
+  require 'custom.themes.github',
+  require 'custom.themes.onedark',
+  require 'custom.themes.ayu',
+  require 'custom.themes.arctic',
 }
 
 -- first theme will be set as default
 local themes = {
   {
+    name = 'VSCode',
+    colorscheme = 'vscode',
+  },
+  {
+    name = 'Kanagawa Dragon',
+    colorscheme = 'kanagawa-dragon',
+  },
+  {
+    name = 'Carbonfox',
+    colorscheme = 'carbonfox',
+  },
+  {
     name = 'Tokyonight Night',
     colorscheme = 'tokyonight-night',
   },
   {
-    name = 'Tokyonight Moon',
-    colorscheme = 'tokyonight-moon',
+    name = 'Github Dark',
+    colorscheme = 'github_dark_default',
   },
   {
-    name = 'Tokyonight Storm',
-    colorscheme = 'tokyonight-storm',
+    name = 'OneDark Darker',
+    colorscheme = 'onedark',
   },
   {
-    name = 'Tokyonight Day',
-    colorscheme = 'tokyonight-day',
+    name = 'Ayu Dark',
+    colorscheme = 'ayu-dark',
+  },
+  {
+    name = 'Arctic',
+    colorscheme = 'arctic',
   },
 }
 
