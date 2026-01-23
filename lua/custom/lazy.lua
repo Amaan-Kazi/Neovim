@@ -29,52 +29,10 @@ return function()
     -- If you want to see what themes are installed, you can use `:Themery`.
     require 'custom.themes',
 
-    -- Detect tabstop and shift width automatically
-    require 'custom.plugins.guess-indent',
-
-    -- Git related signs on the left of line number (gutter) and utilities for managing changes
-    require 'custom.plugins.gitsigns',
-
-    -- Shows continuation of keymaps as you type them
-    require 'custom.plugins.which-key',
-
-    -- Fuzzy Finder for files, LSP, etc
-    require 'custom.plugins.telescope',
+    require 'custom.plugins',
 
     -- LSP: Language Server Protocol
     require 'custom.lsp',
-
-    -- Autoformat
-    require 'custom.plugins.conform',
-    -- Autocompletion
-    require 'custom.plugins.blink',
-
-    -- Highlight todo, notes, etc in comments
-    require 'custom.plugins.todo-comments',
-
-    -- Useful collection of small plugins like status line and better selection around text objects and surroundings
-    require 'custom.plugins.mini',
-
-    -- Fast and efficient parser for syntax highlighting that only analyzes parts of documents that have changed
-    require 'custom.plugins.treesitter',
-
-    -- Live preview for Markdown, HTML (with CSS and JS), AsciiDoc and SVG in your browser with instant updates while typing
-    require 'custom.plugins.live-preview',
-
-    -- Syntax highlighting for chezmoi (dotfile manager)
-    require 'custom.plugins.chezmoi',
-
-    --  Here are some example plugins that I've included in the Kickstart repository.
-    --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-    --
-    -- require 'custom.plugins.debug',
-    require 'custom.plugins.indent_line',
-    -- require 'custom.plugins.lint',
-    require 'custom.plugins.autopairs',
-    require 'custom.plugins.neo-tree',
-
-    -- Use treesitter to autoclose and autorename HTML tags, also works with a few other languages and frameworks
-    require 'custom.plugins.ts-autotag',
 
     -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
     -- Or use telescope!
