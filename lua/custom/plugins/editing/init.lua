@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   -- Useful collection of small plugins like status line and better selection around text objects and surroundings
   require 'custom.plugins.editing.mini',

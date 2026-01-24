@@ -5,6 +5,8 @@
 --
 -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
+---@module 'lazy'
+---@type LazySpec
 -- Fuzzy Finder (files, lsp, etc)
 return {
   'nvim-telescope/telescope.nvim',
@@ -109,5 +111,3 @@ return {
     end, { desc = '[S]earch [N]eovim files' })
   end,
 }
-
--- vim: ts=2 sts=2 sw=2 et

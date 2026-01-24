@@ -1,4 +1,7 @@
-return { -- Highlight, edit, and navigate code
+---@module 'lazy'
+---@type LazySpec
+-- Highlight, edit, and navigate code
+return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
@@ -53,5 +56,3 @@ return { -- Highlight, edit, and navigate code
   --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
   --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 }
-
--- vim: ts=2 sts=2 sw=2 et

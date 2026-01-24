@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 local theme_configs = {
   require 'custom.themes.vscode',
   require 'custom.themes.kanagawa',
@@ -90,6 +92,8 @@ local function ensure_default()
   return true
 end
 
+---@module 'lazy'
+---@type LazySpec
 -- theme loader and picker with persistence
 local themery = {
   'zaldih/themery.nvim',
@@ -115,6 +119,8 @@ local themery = {
   end,
 }
 
+---@module 'lazy'
+---@type LazySpec
 return {
   theme_configs,
   themery,

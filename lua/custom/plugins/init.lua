@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   -- Visual UI plugins
   require 'custom.plugins.ui',

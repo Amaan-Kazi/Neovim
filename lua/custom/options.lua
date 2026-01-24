@@ -73,10 +73,13 @@ return function()
   vim.o.confirm = true
 
   -- 2 space indentation by default
-  vim.o.expandtab = true
-  vim.o.shiftwidth = 2
-  vim.o.tabstop = 2
-  vim.o.softtabstop = 2
+  vim.o.expandtab = true -- When pressing <tab>, convert to space
+  vim.o.shiftwidth = 2 -- how many spaces neovim actually uses when pressing >>, << [normal mode] and autoindent
+  vim.o.tabstop = 2 -- how wide an actual \t character looks
+  vim.o.softtabstop = 2 -- how many spaces a <tab>, <backspace> uses [insert mode]
 end
 
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- It is used to override options for that specific file
+-- ts=tabstop, sts=softtabstop, sw=shiftwidth, et=expandtab
 -- vim: ts=2 sts=2 sw=2 et

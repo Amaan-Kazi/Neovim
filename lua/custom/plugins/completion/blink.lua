@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'saghen/blink.cmp',
   event = 'VimEnter',
@@ -93,5 +95,3 @@ return {
     signature = { enabled = true },
   },
 }
-
--- vim: ts=2 sts=2 sw=2 et

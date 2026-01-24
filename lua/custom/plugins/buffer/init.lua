@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   -- Git related signs on the left of line number (gutter) and utilities for managing changes
   require 'custom.plugins.buffer.gitsigns',

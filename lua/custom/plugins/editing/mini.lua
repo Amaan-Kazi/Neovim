@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 -- Collection of various small independent plugins/modules
 return {
   'echasnovski/mini.nvim',
@@ -36,5 +38,3 @@ return {
     --  Check out: https://github.com/echasnovski/mini.nvim
   end,
 }
-
--- vim: ts=2 sts=2 sw=2 et
