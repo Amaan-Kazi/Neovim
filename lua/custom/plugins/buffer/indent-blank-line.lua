@@ -4,6 +4,8 @@
 -- See `:help ibl`
 return {
   'lukas-reineke/indent-blankline.nvim',
+  lazy = true,
+  event = { 'BufReadPost', 'BufNewFile' },
   main = 'ibl',
   ---@module "ibl"
   ---@type ibl.config

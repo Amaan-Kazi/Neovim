@@ -2,6 +2,7 @@
 ---@type LazySpec
 -- Collection of various small independent plugins/modules
 return {
+  lazy = false,
   'echasnovski/mini.nvim',
   config = function()
     -- Better Around/Inside textobjects

@@ -2,6 +2,8 @@
 ---@type LazySpec
 return {
   'windwp/nvim-ts-autotag',
+  lazy = true,
+  event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     -- https://github.com/windwp/nvim-ts-autotag/issues/229
     -- This plugin requires a opts table passed in config

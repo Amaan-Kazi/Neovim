@@ -3,6 +3,8 @@
 -- Highlight, edit, and navigate code
 return {
   'nvim-treesitter/nvim-treesitter',
+  lazy = true,
+  event = { 'BufReadPost', 'BufNewFile', 'VimEnter' },
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

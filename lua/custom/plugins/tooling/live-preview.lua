@@ -2,6 +2,8 @@
 ---@type LazySpec
 return {
   'brianhuster/live-preview.nvim',
+  lazy = true,
+  cmd = { 'LivePreview' },
   dependencies = {
     'nvim-telescope/telescope.nvim',
   },

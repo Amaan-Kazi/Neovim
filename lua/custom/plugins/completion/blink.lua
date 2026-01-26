@@ -2,7 +2,8 @@
 ---@type LazySpec
 return {
   'saghen/blink.cmp',
-  event = 'VimEnter',
+  lazy = true,
+  event = { 'VimEnter' },
   version = '1.*',
   dependencies = {
     -- Snippet Engine

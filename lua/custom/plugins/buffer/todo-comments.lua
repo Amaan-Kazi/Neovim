@@ -2,7 +2,8 @@
 ---@type LazySpec
 return {
   'folke/todo-comments.nvim',
-  event = 'VimEnter',
+  lazy = true,
+  event = { 'BufReadPost', 'VeryLazy' },
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = { signs = false },
 }

@@ -2,6 +2,8 @@
 ---@type LazySpec
 return {
   'mfussenegger/nvim-lint',
+  enabled = false,
+  lazy = true,
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local lint = require 'lint'
