@@ -4,6 +4,11 @@ This repo has used [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) 
 
 ## Plugins
 
+### [BufferLine](https://github.com/akinsho/bufferline.nvim)
+Show open buffers in the tabline with diagnostics\
+`H` Previous Buffer\
+`L` Next Buffer
+
 ### [Themery](https://github.com/zaldih/themery.nvim)
 Theme switcher with live preview and persistence\
 `:Themery` Open the theme switcher (alias: `:Theme`)

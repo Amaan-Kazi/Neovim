@@ -12,6 +12,8 @@ return function()
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
+  -- Track movement of mouse for bufferline or scrollbar
+  vim.o.mousemoveevent = true
 
   -- Don't show the mode, since it's already in the status line
   vim.o.showmode = false
