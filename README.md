@@ -9,6 +9,12 @@ Show open buffers in the tabline with diagnostics\
 `H` Previous Buffer\
 `L` Next Buffer
 
+### [Scope](https://github.com/tiagovla/scope.nvim)
+Make buffers scoped to tab\
+ie. each tab has different set of buffers open\
+`<tab>` Next Tab\
+`<S-tab>` Previous Tab
+
 ### [Themery](https://github.com/zaldih/themery.nvim)
 Theme switcher with live preview and persistence\
 `:Themery` Open the theme switcher (alias: `:Theme`)

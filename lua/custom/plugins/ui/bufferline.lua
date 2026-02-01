@@ -6,6 +6,12 @@ return {
 
   dependencies = {
     'nvim-tree/nvim-web-devicons',
+
+    {
+      'tiagovla/scope.nvim',
+      lazy = false,
+      config = true,
+    },
   },
 
   lazy = false,

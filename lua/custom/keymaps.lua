@@ -32,6 +32,10 @@ return function()
   vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
   vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+  -- Tab Keymaps
+  vim.keymap.set('n', '<tab>', '<cmd>:tabnext<cr>', { desc = 'Next Tab' })
+  vim.keymap.set('n', '<S-tab>', '<cmd>:tabprevious<cr>', { desc = 'Previous Tab' })
+
   -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
   -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
   -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
