@@ -33,8 +33,14 @@ return function()
   vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
   -- Tab Keymaps
-  vim.keymap.set('n', '<tab>', '<cmd>:tabnext<cr>', { desc = 'Next Tab' })
-  vim.keymap.set('n', '<S-tab>', '<cmd>:tabprevious<cr>', { desc = 'Previous Tab' })
+  vim.keymap.set('n', '<tab>', '<cmd>:tabnext<cr>', { desc = '[Tab] Next' })
+  vim.keymap.set('n', '<S-tab>', '<cmd>:tabprevious<cr>', { desc = '[Tab] Previous' })
+
+  vim.keymap.set('n', '<leader><tab>n', '<cmd>:tabnew<cr>', { desc = '[Tab] [N]ew' })
+  vim.keymap.set('n', '<leader><tab>d', '<cmd>:tabclose<cr>', { desc = '[Tab] [D]elete' })
+
+  -- Buffer Keymaps
+  vim.keymap.set('n', '<leader>bn', '<cmd>:enew<cr>', { desc = '[B]uffer [N]ew' })
 
   -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
   -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })

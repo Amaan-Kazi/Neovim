@@ -13,6 +13,10 @@ return {
     --  - ci'  - [C]hange [I]nside [']quote
     require('mini.ai').setup { n_lines = 500 }
 
+    require('mini.bufremove').setup()
+
+    vim.keymap.set('n', '<leader>bd', require('mini.bufremove').delete, { desc = '[B]uffer [D]elete' })
+
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
