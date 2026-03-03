@@ -32,7 +32,7 @@ return function()
     require 'custom.plugins',
 
     -- LSP: Language Server Protocol
-    require 'custom.lsp',
+    require 'custom.packages',
 
     -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
     -- Or use telescope!
