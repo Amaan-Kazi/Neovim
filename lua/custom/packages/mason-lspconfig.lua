@@ -1,14 +1,16 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-  'mason-org/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
 
   lazy = true,
   event = { 'VeryLazy' },
 
   dependencies = {
-    'neovim/nvim-lspconfig',
     'mason-org/mason.nvim',
+
+    -- Maps LSP server names between nvim-lspconfig and Mason package names.
+    'mason-org/mason-lspconfig.nvim',
 
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
@@ -72,7 +74,7 @@ return {
         --  the definition of its *type*, not where it was *defined*.
         map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
-        -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
+        -- This function resolves a difference between neovim version 0.11 and version 0.10
         ---@param client vim.lsp.Client
         ---@param method vim.lsp.protocol.Method
         ---@param bufnr? integer some lsp support methods only in specific files
@@ -156,30 +158,11 @@ return {
     }
 
     local servers = require 'custom.packages.lsp'
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-    require('mason-lspconfig').setup {
-      -- Installation is handled by mason-tool-installer
-      ensure_installed = {},
-      automatic_installation = false,
-
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-
-          -- LSP servers and clients are able to communicate to each other what features they support.
-          --  By default, Neovim doesn't support everything that is in the LSP specification.
-          --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
-          --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
-
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
-      },
-    }
+    for name, config in pairs(servers) do
+      vim.lsp.config(name, config)
+      vim.lsp.enable(name)
+    end
   end,
 }
 
