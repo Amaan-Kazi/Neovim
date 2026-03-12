@@ -6,18 +6,18 @@ return {
 
   build = ':TSUpdate',
   branch = 'main',
-  -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
 
-  lazy = true,
-  event = { 'BufReadPost', 'BufNewFile', 'VimEnter' },
+  lazy = false,
 
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-  opts = {
-    ensure_installed = {
+  config = function()
+    local parsers = {
       'html',
       'css',
       'javascript',
       'json',
+
+      'astro',
 
       'bash',
       'c',
@@ -35,28 +35,37 @@ return {
 
       'hyprlang',
       'gotmpl',
-    },
+    }
 
-    -- Autoinstall languages that are not installed
-    auto_install = true,
-    highlight = {
-      enable = true,
-      -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-      --  If you are experiencing weird indenting issues, add the language to
-      --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
+    require('nvim-treesitter').install(parsers)
 
-    indent = {
-      enable = true,
-      disable = {
-        'ruby',
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function(args)
+        local buf, filetype = args.buf, args.match
 
-        -- keeping it enabled seems to be messing with neovim and other plugins performing html indentation
-        'html',
-      },
-    },
-  },
+        local language = vim.treesitter.language.get_lang(filetype)
+        if not language then
+          return
+        end
+
+        -- check if parser exists and load it
+        if not vim.treesitter.language.add(language) then
+          return
+        end
+
+        -- enables syntax highlighting and other treesitter features
+        vim.treesitter.start(buf, language)
+
+        -- enables treesitter based folds
+        -- for more info on folds see `:help folds`
+        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        -- vim.wo.foldmethod = 'expr'
+
+        -- enables treesitter based indentation
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
+    })
+  end,
 
   -- There are additional nvim-treesitter modules that you can use to interact
   -- with nvim-treesitter. You should go explore a few and see what interests you:
