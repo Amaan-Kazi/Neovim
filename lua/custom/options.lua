@@ -29,7 +29,7 @@ return function()
   -- Enable break indent
   vim.o.breakindent = true
 
-  -- Save undo history
+  -- Enable undo/redo changes even after closing and reopening a file
   vim.o.undofile = true
 
   -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -56,7 +56,7 @@ return function()
   --  Notice listchars is set using `vim.opt` instead of `vim.o`.
   --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
   --   See `:help lua-options`
-  --   and `:help lua-options-guide`
+  --   and `:help lua-guide-options`
   vim.o.list = true
   vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 

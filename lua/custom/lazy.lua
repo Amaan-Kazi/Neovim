@@ -5,6 +5,7 @@ return function()
   if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
     local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+
     if vim.v.shell_error ~= 0 then
       error('Error cloning lazy.nvim:\n' .. out)
     end
@@ -31,7 +32,7 @@ return function()
 
     require 'custom.plugins',
 
-    -- LSP: Language Server Protocol
+    -- Manage and integrate external binaries for tools
     require 'custom.packages',
 
     -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`

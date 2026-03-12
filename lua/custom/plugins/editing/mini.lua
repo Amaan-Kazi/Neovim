@@ -3,7 +3,7 @@
 -- Collection of various small independent plugins/modules
 return {
   lazy = false,
-  'echasnovski/mini.nvim',
+  'mini-nvim/mini.nvim',
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -40,6 +40,6 @@ return {
     end
 
     -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+    --  Check out: https://github.com/mini-nvim/mini.nvim
   end,
 }

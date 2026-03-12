@@ -3,10 +3,14 @@
 -- Highlight, edit, and navigate code
 return {
   'nvim-treesitter/nvim-treesitter',
+
+  build = ':TSUpdate',
+  branch = 'main',
+  -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+
   lazy = true,
   event = { 'BufReadPost', 'BufNewFile', 'VimEnter' },
-  build = ':TSUpdate',
-  main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
     ensure_installed = {
@@ -32,6 +36,7 @@ return {
       'hyprlang',
       'gotmpl',
     },
+
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
@@ -41,16 +46,18 @@ return {
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
       additional_vim_regex_highlighting = { 'ruby' },
     },
+
     indent = {
       enable = true,
       disable = {
         'ruby',
 
-        -- keeping it enabled seems to be with neovim and other plugins performing html indentation
+        -- keeping it enabled seems to be messing with neovim and other plugins performing html indentation
         'html',
       },
     },
   },
+
   -- There are additional nvim-treesitter modules that you can use to interact
   -- with nvim-treesitter. You should go explore a few and see what interests you:
   --

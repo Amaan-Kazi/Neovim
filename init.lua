@@ -21,5 +21,8 @@ require 'custom.keymaps'()
 -- Set functions which are called on certain neovim events to modify or improve them
 require 'custom.autocommands'()
 
+-- Info, Hints, Warnings, Errors
+require 'custom.diagnostic'()
+
 -- Load the Lazy plugin manager
 require 'custom.lazy'()
