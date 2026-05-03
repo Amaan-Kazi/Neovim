@@ -35,6 +35,9 @@ return {
 
       'hyprlang',
       'gotmpl',
+
+      'asm',
+      'nasm',
     }
 
     require('nvim-treesitter').install(parsers)

@@ -15,6 +15,13 @@ return {
 
   nextls = {},
 
+  -- Java
+  jdtls = {},
+
+  asm_lsp = {
+    filetypes = { 'asm', 's', 'S' },
+  },
+
   emmet_ls = {
     filetypes = {
       'html',
