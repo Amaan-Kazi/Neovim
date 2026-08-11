@@ -1,12 +1,13 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-  -- Package manager
+  -- Package manager for debug adapters, formatters, linters and language servers
   require 'custom.packages.mason',
 
-  -- Ensure the dap, formatter, linter and lsp packages are installed
+  -- Automatically install mason packages on startup
   require 'custom.packages.mason-tool-installer',
 
-  -- Configure LSP servers and automatically enable them
-  require 'custom.packages.mason-lspconfig',
+  -- Provides default language server configurations
+  -- We are also enabling the servers and attaching lsp specific keybinds to the buffer right here
+  require 'custom.packages.nvim-lspconfig',
 }

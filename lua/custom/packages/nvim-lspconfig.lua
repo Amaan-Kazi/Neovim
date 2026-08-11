@@ -9,9 +9,6 @@ return {
   dependencies = {
     'mason-org/mason.nvim',
 
-    -- Maps LSP server names between nvim-lspconfig and Mason package names.
-    'mason-org/mason-lspconfig.nvim',
-
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
 
@@ -91,11 +88,11 @@ return {
       end,
     })
 
-    local servers = require 'custom.packages.lsp'
+    local language_servers = require 'custom.packages.language-servers'
 
-    for name, config in pairs(servers) do
-      vim.lsp.config(name, config)
-      vim.lsp.enable(name)
+    for _, server in ipairs(language_servers) do
+      vim.lsp.config(server.name, server.config)
+      vim.lsp.enable(server.name)
     end
   end,
 }

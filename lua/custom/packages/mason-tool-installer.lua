@@ -1,9 +1,13 @@
-local lsp_servers = require 'custom.packages.lsp'
-local ensure_installed = vim.tbl_keys(lsp_servers or {})
+local ensure_installed = {}
+local language_servers = require 'custom.packages.language-servers'
 
-vim.list_extend(ensure_installed, require 'custom.packages.dap')
-vim.list_extend(ensure_installed, require 'custom.packages.formatter')
-vim.list_extend(ensure_installed, require 'custom.packages.linter')
+for _, server in ipairs(language_servers) do
+  table.insert(ensure_installed, server.mason_name)
+end
+
+vim.list_extend(ensure_installed, require 'custom.packages.debug-adapters')
+vim.list_extend(ensure_installed, require 'custom.packages.formatters')
+vim.list_extend(ensure_installed, require 'custom.packages.linters')
 
 ---@module 'lazy'
 ---@type LazySpec
@@ -23,6 +27,12 @@ return {
   opts = {
     run_on_start = true,
     ensure_installed = ensure_installed,
+
+    integrations = {
+      ['mason-lspconfig'] = false,
+      ['mason-null-ls'] = false,
+      ['mason-nvim-dap'] = false,
+    },
   },
 }
 
