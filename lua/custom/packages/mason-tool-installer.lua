@@ -1,11 +1,20 @@
 local ensure_installed = {}
+
 local language_servers = require 'custom.packages.language-servers'
+local debug_adapters = require 'custom.packages.debug-adapters'
 
 for _, server in ipairs(language_servers) do
-  table.insert(ensure_installed, server.mason_name)
+  if server.mason_name ~= nil then
+    table.insert(ensure_installed, server.mason_name)
+  end
 end
 
-vim.list_extend(ensure_installed, require 'custom.packages.debug-adapters')
+for _, adapter in ipairs(debug_adapters) do
+  if adapter.mason_name ~= nil then
+    table.insert(ensure_installed, adapter.mason_name)
+  end
+end
+
 vim.list_extend(ensure_installed, require 'custom.packages.formatters')
 vim.list_extend(ensure_installed, require 'custom.packages.linters')
 

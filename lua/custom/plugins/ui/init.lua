@@ -6,4 +6,7 @@ return {
 
   -- Display open buffers instead of tabs in the nvim tabline
   require 'custom.plugins.ui.bufferline',
+
+  -- Useful status updates for LSP.
+  require 'custom.plugins.ui.fidget',
 }

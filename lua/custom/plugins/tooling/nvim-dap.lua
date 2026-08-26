@@ -10,9 +10,13 @@
 ---@type LazySpec
 return {
   'mfussenegger/nvim-dap',
-  enabled = false,
+
   lazy = true,
+
   dependencies = {
+    'mason-org/mason.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
 
@@ -26,6 +30,7 @@ return {
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
   },
+
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
     {
@@ -79,6 +84,7 @@ return {
       desc = 'Debug: See last session result.',
     },
   },
+
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -99,6 +105,22 @@ return {
         'delve',
       },
     }
+
+    local debug_adapters = require 'custom.packages.debug-adapters'
+
+    for _, adapter in ipairs(debug_adapters) do
+      for adapter_name, adapter_config in pairs(adapter.adapters) do
+        dap.adapters[adapter_name] = adapter_config
+      end
+
+      for filetype, configurations in pairs(adapter.configurations) do
+        if dap.configurations[filetype] == nil then
+          dap.configurations[filetype] = {}
+        end
+
+        vim.list_extend(dap.configurations[filetype], configurations)
+      end
+    end
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
