@@ -9,4 +9,7 @@ return {
 
   -- Useful status updates for LSP.
   require 'custom.plugins.ui.fidget',
+
+  -- IDE like breadcrumbs
+  require 'custom.plugins.ui.dropbar',
 }
