@@ -24,4 +24,7 @@ return {
 
   -- External tool integration with neovim
   require 'custom.plugins.integration',
+
+  -- Utility plugins
+  require 'custom.plugins.util',
 }
