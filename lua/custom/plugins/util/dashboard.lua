@@ -84,6 +84,19 @@ return {
           action = 'lua require("telescope.builtin").oldfiles()',
         },
         {
+          icon = '  ',
+          icon_hl = 'Title',
+
+          desc = 'Leetcode',
+          desc_hl = 'String',
+
+          key = 'l',
+          key_hl = 'Number',
+          -- key_format = '%s',
+
+          action = 'Leet',
+        },
+        {
           icon = '  ',
           icon_hl = 'Title',
 
