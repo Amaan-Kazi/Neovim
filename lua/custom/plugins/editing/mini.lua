@@ -2,8 +2,10 @@
 ---@type LazySpec
 -- Collection of various small independent plugins/modules
 return {
+  'nvim-mini/mini.nvim',
+
   lazy = false,
-  'mini-nvim/mini.nvim',
+
   config = function()
     -- Better Around/Inside textobjects
     --

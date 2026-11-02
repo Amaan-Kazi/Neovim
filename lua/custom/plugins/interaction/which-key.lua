@@ -22,6 +22,8 @@ return {
       { '<leader>b', group = '[B]uffer' },
       { '<leader><tab>', group = '[Tab]' },
 
+      { '<leader>d', group = '[D]ebug', mode = { 'n', 'v' } },
+
       { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
 
       { '<leader>t', group = '[T]oggle' },

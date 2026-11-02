@@ -4,13 +4,13 @@ local language_servers = require 'custom.packages.language-servers'
 local debug_adapters = require 'custom.packages.debug-adapters'
 
 for _, server in ipairs(language_servers) do
-  if server.mason_name ~= nil then
+  if (server.mason_name ~= nil) and not server.disabled then
     table.insert(ensure_installed, server.mason_name)
   end
 end
 
 for _, adapter in ipairs(debug_adapters) do
-  if adapter.mason_name ~= nil then
+  if (adapter.mason_name ~= nil) and not adapter.disabled then
     table.insert(ensure_installed, adapter.mason_name)
   end
 end

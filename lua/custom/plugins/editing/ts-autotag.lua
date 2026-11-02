@@ -2,11 +2,13 @@
 ---@type LazySpec
 return {
   'windwp/nvim-ts-autotag',
+
   lazy = true,
   event = { 'BufReadPre', 'BufNewFile' },
+
   opts = {
     -- https://github.com/windwp/nvim-ts-autotag/issues/229
-    -- This plugin requires a opts table passed in config
+    -- This plugin requires a table named opts passed within the config
 
     opts = {
       enable_close = true, -- Auto close tags

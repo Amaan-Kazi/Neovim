@@ -1,6 +1,10 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'L3MON4D3/LuaSnip',
   version = '2.*',
+
+  lazy = true,
 
   dependencies = {
     'rafamadriz/friendly-snippets',

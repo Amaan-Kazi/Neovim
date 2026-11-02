@@ -92,8 +92,10 @@ return {
     local language_servers = require 'custom.packages.language-servers'
 
     for _, server in ipairs(language_servers) do
-      vim.lsp.config(server.name, server.config)
-      vim.lsp.enable(server.name)
+      if not server.disabled then
+        vim.lsp.config(server.name, server.config)
+        vim.lsp.enable(server.name)
+      end
     end
   end,
 }

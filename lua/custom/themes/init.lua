@@ -1,8 +1,8 @@
 ---@module 'lazy'
 ---@type LazySpec
 local theme_configs = {
-  require 'custom.themes.vscode',
   require 'custom.themes.kanagawa',
+  require 'custom.themes.vscode',
   require 'custom.themes.nightfox',
   require 'custom.themes.tokyonight',
   require 'custom.themes.github',
@@ -13,38 +13,14 @@ local theme_configs = {
 
 -- first theme will be set as default
 local themes = {
-  {
-    name = 'VSCode',
-    colorscheme = 'vscode',
-  },
-  {
-    name = 'Kanagawa Dragon',
-    colorscheme = 'kanagawa-dragon',
-  },
-  {
-    name = 'Carbonfox',
-    colorscheme = 'carbonfox',
-  },
-  {
-    name = 'Tokyonight Night',
-    colorscheme = 'tokyonight-night',
-  },
-  {
-    name = 'Github Dark',
-    colorscheme = 'github_dark_default',
-  },
-  {
-    name = 'OneDark Darker',
-    colorscheme = 'onedark',
-  },
-  {
-    name = 'Ayu Dark',
-    colorscheme = 'ayu-dark',
-  },
-  {
-    name = 'Arctic',
-    colorscheme = 'arctic',
-  },
+  { name = 'Kanagawa Dragon', colorscheme = 'kanagawa-dragon' },
+  { name = 'VSCode', colorscheme = 'vscode' },
+  { name = 'Carbonfox', colorscheme = 'carbonfox' },
+  { name = 'Tokyonight Night', colorscheme = 'tokyonight-night' },
+  { name = 'Github Dark', colorscheme = 'github_dark_default' },
+  { name = 'OneDark Darker', colorscheme = 'onedark' },
+  { name = 'Ayu Dark', colorscheme = 'ayu-dark' },
+  { name = 'Arctic', colorscheme = 'arctic' },
 }
 
 -- code in string that will run before and after every colorscheme changed with Themery
