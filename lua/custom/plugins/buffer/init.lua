@@ -7,6 +7,9 @@ return {
   -- Fast and efficient parser for syntax highlighting that only analyzes parts of documents that have changed
   require 'custom.plugins.buffer.treesitter',
 
+  -- Useful treesitter textobjects for many languages
+  require 'custom.plugins.buffer.treesitter-texobjects',
+
   -- Add indentation guide, even on blank lines
   require 'custom.plugins.buffer.indent-blank-line',
 
