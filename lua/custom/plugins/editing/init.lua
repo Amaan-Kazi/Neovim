@@ -9,4 +9,7 @@ return {
 
   -- Use treesitter to autoclose and autorename HTML tags, also works with a few other languages and frameworks
   require 'custom.plugins.editing.ts-autotag',
+
+  -- Toggle special words like true / false
+  require 'custom.plugins.editing.toggle',
 }
